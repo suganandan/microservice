@@ -1,0 +1,17 @@
+package rules
+ 
+import com.atos.model.Product
+rule "Offer for Diamond Scheme"
+	when 
+		productObject: Product(type=="diamondCard")
+	then
+		productObject.setDiscount(25);
+	end
+rule "Offer for Gold Scheme"
+	when 
+		productObject: Product(type=="goldCard")
+	then
+		productObject.setDiscount(35);
+	end
+	
+	
